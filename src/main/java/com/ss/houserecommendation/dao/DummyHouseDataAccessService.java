@@ -48,7 +48,7 @@ public class DummyHouseDataAccessService implements HouseDao
 	public int updateHouseById(UUID id, House houseUpdate) 
 	{
 		return selectHouseById(id).map(house -> {int indexOfHouseToUpdate = houseDB.indexOf(house);
-		if(indexOfHouseToUpdate >= 0)
+		if(indexOfHouseToUpdate >= 0) 
 		{
 			houseDB.set(indexOfHouseToUpdate, new House(id,houseUpdate.getName(),houseUpdate.getImageUrl(),houseUpdate.getLocation()
 					,houseUpdate.getDescription(),houseUpdate.getPrice()));
