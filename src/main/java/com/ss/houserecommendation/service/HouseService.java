@@ -17,7 +17,7 @@ public class HouseService
 	private final HouseDao houseDao;
 
 	@Autowired
-	public HouseService(@Qualifier("dummyDao") HouseDao houseDao) 
+	public HouseService(@Qualifier("postgres_implementation") HouseDao houseDao) 
 	{
 		this.houseDao = houseDao;
 	}
