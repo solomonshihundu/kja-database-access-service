@@ -16,16 +16,24 @@ public class HouseDataAccessService implements HouseDao
 	
 	private final JdbcTemplate jdbcTemplate;
 	
+	private String hseNameUpdate = "Gray Ilse";
+	private String hseImageUrlUpdate = "http//rjhtgehe";
+	private String hseLocationUpdate = "Kahawa";
+	private String hseDescriptionUpdate = "A very nice place";
+	private String hsePriceUpdate = "125689";
+	
 	@Autowired
-	public HouseDataAccessService(JdbcTemplate jdbcTemplate) {
+	public HouseDataAccessService(JdbcTemplate jdbcTemplate)
+	{
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
 	@Override
 	public int insertHouse(UUID id, House house)
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		jdbcTemplate.update("INSERT INTO schema.housedata (id,name,imageurl,location,description,price) VALUES (?, ?, ?, ?, ?, ?)",
+				id, hseNameUpdate,hseImageUrlUpdate,hseLocationUpdate,hseDescriptionUpdate,hsePriceUpdate );
+		return 1;
 	}
 
 	@Override

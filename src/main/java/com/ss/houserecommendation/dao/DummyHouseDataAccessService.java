@@ -16,7 +16,8 @@ public class DummyHouseDataAccessService implements HouseDao
 	private static List<House> houseDB = new ArrayList<>();
 
 	@Override
-	public int insertHouse(UUID id, House house) {
+	public int insertHouse(UUID id, House house) 
+	{
 		houseDB.add(new House(id,house.getName(),house.getImageUrl(),house.getLocation(),house.getDescription(),house.getPrice()));
 		return 1; 
 	}

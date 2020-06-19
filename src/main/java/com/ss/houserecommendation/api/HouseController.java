@@ -25,7 +25,8 @@ public class HouseController {
 	private final HouseService houseService;
 
 	@Autowired
-	public HouseController(HouseService houseService) {
+	public HouseController(HouseService houseService) 
+	{
 		this.houseService = houseService;
 	}
 	
