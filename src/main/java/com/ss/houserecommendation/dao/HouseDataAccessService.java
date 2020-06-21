@@ -16,11 +16,6 @@ public class HouseDataAccessService implements HouseDao
 	
 	private final JdbcTemplate jdbcTemplate;
 	
-	private String hseNameUpdate = "Gray Ilse";
-	private String hseImageUrlUpdate = "http//rjhtgehe";
-	private String hseLocationUpdate = "Kahawa";
-	private String hseDescriptionUpdate = "A very nice place";
-	private String hsePriceUpdate = "125689";
 	
 	@Autowired
 	public HouseDataAccessService(JdbcTemplate jdbcTemplate)
@@ -31,8 +26,8 @@ public class HouseDataAccessService implements HouseDao
 	@Override
 	public int insertHouse(UUID id, House house)
 	{
-		jdbcTemplate.update("INSERT INTO schema.housedata (id,name,imageurl,location,description,price) VALUES (?, ?, ?, ?, ?, ?)",
-				id, hseNameUpdate,hseImageUrlUpdate,hseLocationUpdate,hseDescriptionUpdate,hsePriceUpdate );
+		jdbcTemplate.update("INSERT INTO housedata (id,name,imageurl,location,description,price) VALUES (?, ?, ?, ?, ?, ?)",
+				id, house.getName(),house.getImageUrl(),house.getLocation(),house.getDescription(),house.getPrice() );
 		return 1;
 	}
 
@@ -83,8 +78,8 @@ public class HouseDataAccessService implements HouseDao
 	@Override
 	public int updateHouseById(UUID id, House house) 
 	{
-		String updateQuery = "update housedata where id = ?";
-		jdbcTemplate.update(updateQuery,house,id);
+		String updateQuery = "update housedata set name,imageUrl,location,description,price where id = ?";
+		jdbcTemplate.update(updateQuery,house.getName(),house.getImageUrl(),house.getLocation(),house.getDescription(),house.getPrice(),id);
 		return 1;
 	}
 
