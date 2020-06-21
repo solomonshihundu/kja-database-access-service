@@ -57,8 +57,7 @@ public class HouseController {
 	@PutMapping(path = "{id}")
 	public void updateHouse(@PathVariable("id") UUID id,@Validated @NonNull @RequestBody House houseUpdate)
 	{
-		houseService.updateHouse(id, houseUpdate);
-		
+		houseService.updateHouse(id, houseUpdate);	
 	}
 
 }

@@ -2,5 +2,5 @@ app:
    datasource:
       jdbc-url: jdbc:postgresql://localhost:5432/housedatadb
       username: postgres
-      password: password
+      password: alpine
       poolsize: 30

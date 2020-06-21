@@ -75,15 +75,17 @@ public class HouseDataAccessService implements HouseDao
 	@Override
 	public int deleteHouseById(UUID id) 
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		final String sqlQuery = "DELETE FROM housedata WHERE id = ?";
+		jdbcTemplate.update(sqlQuery, id);
+		return 1;
 	}
 
 	@Override
 	public int updateHouseById(UUID id, House house) 
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		String updateQuery = "update housedata where id = ?";
+		jdbcTemplate.update(updateQuery,house,id);
+		return 1;
 	}
 
 }
