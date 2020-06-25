@@ -82,5 +82,5 @@ public class HouseDataAccessService implements HouseDao
 		jdbcTemplate.update(updateQuery,house.getName(),house.getImageUrl(),house.getLocation(),house.getDescription(),house.getPrice(),id);
 		return 1;
 	}
-
+ 
 }
