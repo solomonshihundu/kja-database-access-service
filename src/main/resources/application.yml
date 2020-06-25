@@ -1,6 +1,6 @@
 app:
    datasource:
-      jdbc-url: jdbc:postgresql://localhost:5432/housedatadb
-      username: postgres
-      password: alpine
+      jdbc-url: postgres://ecwapiawohsrrs:ce77f5bfb3f426b59b355bee060ede329309f21a13c24e569ed2b21ee7d5acdb@ec2-52-0-155-79.compute-1.amazonaws.com:5432/dcc11blr6enogo
+      username: ecwapiawohsrrs
+      password: ce77f5bfb3f426b59b355bee060ede329309f21a13c24e569ed2b21ee7d5acdb
       poolsize: 30
